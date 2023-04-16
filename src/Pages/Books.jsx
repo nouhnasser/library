@@ -11,8 +11,8 @@ const Books = ({ books: initialbooks }) => {
           .slice()
           .sort(
             (a, b) =>
-              (a.salePice || a.originalPrice) - 
-              (b.salePice || b.originalPrice)
+              (a.salePrice || a.originalPrice) - 
+              (b.salePrice || b.originalPrice)
           )
       );
     }
@@ -22,11 +22,14 @@ const Books = ({ books: initialbooks }) => {
           .slice()
           .sort(
             (a, b) =>
-              (b.salePice || b.originalPrice) -
-              (a.salePice || a.originalPrice)
+              (b.salePrice || b.originalPrice) -
+              (a.salePrice || a.originalPrice)
           )
       );
-    }
+          }
+      if (filter === "RATING") {
+        setBooks(books.slice().sort((a, b) => b.rating - a.rating ))
+      }
   }
 
   return (
