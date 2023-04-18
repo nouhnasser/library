@@ -9,6 +9,7 @@ const Books = ({ books: initialbooks }) => {
       setBooks(
         books
           .slice()
+          
           .sort(
             (a, b) =>
               (a.salePrice || a.originalPrice) - 
