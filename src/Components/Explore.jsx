@@ -11,7 +11,7 @@ const Explore = () => {
                 </h2>
                 <Link to="/books">
                     <button className="btn">Explore books</button>
-                    </Link>
+                </Link>
             </div>
         </div>
     </section>

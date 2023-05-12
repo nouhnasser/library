@@ -405,6 +405,7 @@ FEATURES
 .book__title--skeleton {
   height: 21px;
   width: 100%;
+  max-width: 250px;
 }
 
 .book__rating--skeleton {
@@ -621,14 +622,17 @@ select {
 
 .book__summary {
   margin-bottom: 16px;
+  text-align: left;
+  
 }
 
 .book__selected--title {
-  margin-bottom: 8px
+  margin-bottom: 8px;
 }
 
 .book__summary--title {
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .book__summary--para {
@@ -716,6 +720,7 @@ select {
 
 .cart__book--price {
   margin-bottom: 16px;
+  text-align: left;
 }
 
 .cart__book--remove {
@@ -795,6 +800,7 @@ select {
   }
 
   .book__selected {
+    
     flex-direction: column;
   }
   .book__selected--figure {
