@@ -18,6 +18,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
             <div className="book__selected--top">
               <h2 className="cart__title">Cart</h2>
             </div>
+            
             <div className="cart">
               <div className="cart__header">
                 <span className="cart__book">Book</span>
