@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav.1";
 import Footer from "./components/Footer";
 import Home from "./Pages/Home";
 import Books from "./Pages/Books";
@@ -29,15 +29,15 @@ function App() {
     );
   }
   function removeItem(item) {
-    setCart(cart.filter(book => book.id !== item.id))
+    setCart(cart.filter((book) => book.id !== item.id));
   }
 
   function numberOfItems() {
-    let counter = 0
-    cart.forEach(item => {
-      counter += item.quantity
-    })
-    return counter
+    let counter = 0;
+    cart.forEach((item) => {
+      counter += item.quantity;
+    });
+    return counter;
   }
 
   useEffect(() => {
@@ -46,7 +46,7 @@ function App() {
   return (
     <>
       <Router>
-        <Nav numberOfItems={numberOfItems()}/>
+        <Nav numberOfItems={numberOfItems()} />
         <Route path="/" exact component={Home} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route

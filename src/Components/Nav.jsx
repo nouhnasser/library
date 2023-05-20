@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../assets/Library.svg";
-function Nav({ numberOfItems }) {
+const  Nav = ({ numberOfItems }) => {
   function openMenu() {
     document.body.classList += ' menu--open';
   }
 
-  function closeMenu() {
+   function closeMenu() {
     document.body.classList.remove("menu--open");
   }
   return (
