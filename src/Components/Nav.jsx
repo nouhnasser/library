@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo from "../assets/Library.svg";
 const Nav = ({ numberOfItems }) => {
   function openMenu() {
-    document.body.classList += ' menu--open';
+    document.body.classList += " menu--open";
   }
 
   function closeMenu() {
