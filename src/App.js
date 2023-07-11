@@ -1,13 +1,12 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import Home from "./Pages/Home";
-import Books from "./Pages/Books";
+import Nav from "./components/Nav";
+import Home from "./pages/Home";
+import Books from "./pages/Books";
 import { books } from "./data";
-import BookInfo from "./Pages/BookInfo";
-import Cart from "./Pages/Cart";
-import { useState } from "react";
-import { useEffect } from "react";
+import BookInfo from "./pages/BookInfo";
+import Cart from "./pages/Cart";
+import { useEffect, useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -18,8 +17,7 @@ function App() {
 
   function changeQuantity(book, quantity) {
     setCart(
-      cart.map((item) =>
-        item.id === book.id
+      cart.map((item) =>  item.id === book.id
           ? {
               ...item,
               quantity: +quantity,
@@ -28,25 +26,25 @@ function App() {
       )
     );
   }
+
   function removeItem(item) {
-    setCart(cart.filter((book) => book.id !== item.id));
+    setCart(cart.filter(book => book.id !== item.id))
   }
 
   function numberOfItems() {
-    let counter = 0;
-    cart.forEach((item) => {
-      counter += item.quantity;
-    });
-    return counter;
+    let counter = 0
+    cart.forEach(item => {
+      counter += item.quantity
+    })
+    return counter
   }
-
   useEffect(() => {
     console.log(cart);
   }, [cart]);
   return (
-    <>
-      <Router>
-        <Nav numberOfItems={numberOfItems()} />
+    <Router>
+      <>
+        <Nav numberOfItems={numberOfItems()}/>
         <Route path="/" exact component={Home} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
@@ -58,17 +56,12 @@ function App() {
         <Route
           path="/cart"
           render={() => (
-            <Cart
-              books={books}
-              cart={cart}
-              changeQuantity={changeQuantity}
-              removeItem={removeItem}
-            />
+            <Cart books={books} cart={cart} changeQuantity={changeQuantity} removeItem={removeItem}/>
           )}
         />
         <Footer />
-      </Router>
-    </>
+      </>
+    </Router>
   );
 }
 

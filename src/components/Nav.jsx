@@ -1,7 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import logo from "../assets/Library.svg";
+import React from "react";
+import Librarylogo from "../assets/Library.svg";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
+
 const Nav = ({ numberOfItems }) => {
   function openMenu() {
     document.body.classList += " menu--open";
@@ -14,7 +15,7 @@ const Nav = ({ numberOfItems }) => {
     <nav>
       <div className="nav__container">
         <Link to="/">
-          <img src={logo} alt="" className="logo" />
+          <img src={Librarylogo} alt="" className="logo" />
         </Link>
         <ul className="nav__links">
           <li className="nav__list">
@@ -45,17 +46,17 @@ const Nav = ({ numberOfItems }) => {
           </button>
           <ul className="menu__links">
             <li className="menu__list">
-              <Link to="/" className="menu__link">
+              <Link to="/" className="menu__link" onClick={closeMenu}>
                 Home
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/books" className="menu__link">
+              <Link to="/books" className="menu__link" onClick={closeMenu}>
                 Books
               </Link>
             </li>
             <li className="menu__list">
-              <Link to="/cart" className="menu__link">
+              <Link to="/cart" className="menu__link" onClick={closeMenu}>
                 Cart
               </Link>
             </li>
