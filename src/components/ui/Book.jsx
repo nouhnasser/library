@@ -6,25 +6,25 @@ import Price from "./Price";
 const Book = ({ book }) => {
   const [img, setImg] = useState();
 
-  const mountedRef = useRef(true) 
+  const mountedRef = useRef(true);
 
   useEffect(() => {
     const image = new Image();
     image.src = book.url;
     image.onload = () => {
       setTimeout(() => {
-        setImg(image)
+        setImg(image);
       }, 300);
-    }
+    };
     return () => {
       mountedRef.current = false;
-    }
-  })
+    };
+  });
   useEffect(() => {
     if (img) {
       mountedRef.current = true;
     }
-  }, [img])
+  }, [img]);
   return (
     <div className="book">
       {img ? (
@@ -48,13 +48,12 @@ const Book = ({ book }) => {
         </>
       ) : (
         <>
-         <div className="book__img--skeleton"></div>
-      <div className="skeleton book__title--skeleton"></div>
-      <div className="skeleton book__rating--skeleton"></div>
-      <div className="skeleton book__price--skeleton"></div>
+          <div className="book__img--skeleton"></div>
+          <div className="skeleton book__title--skeleton"></div>
+          <div className="skeleton book__rating--skeleton"></div>
+          <div className="skeleton book__price--skeleton"></div>
         </>
       )}
-     
     </div>
   );
 };
