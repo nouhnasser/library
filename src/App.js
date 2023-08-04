@@ -1,12 +1,13 @@
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Nav from "./components/Nav";
-import Books from "./pages/Books"
 import { books } from "./data";
 import BookInfo from "./pages/BookInfo";
 import Cart from "./pages/Cart";
 import { useEffect, useState } from "react";
 import Home from "./pages/Home";
+import Books from "./pages/Books";
+
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -46,7 +47,7 @@ function App() {
     <Router>
       <>
         <Nav numberOfItems={numberOfItems()} />
-        <Route path="/" exact element={<Home/>} />
+        <Route path="/" exact element={<Home />} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
           path="/books/:id"
