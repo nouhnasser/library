@@ -46,7 +46,7 @@ function App() {
     <Router>
       <>
         <Nav numberOfItems={numberOfItems()} />
-        <Route path="/" exact element={<Home/>} />
+        <Route path="/" exact element={<Home />} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
           path="/books/:id"
