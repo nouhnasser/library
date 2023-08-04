@@ -8,9 +8,6 @@ import Books from "./pages/Books";
 import BookInfo from "./pages/BookInfo";
 import Cart from "./pages/Cart";
 
-
-
-
 function App() {
   const [cart, setCart] = useState([]);
 
@@ -49,7 +46,7 @@ function App() {
     <Router>
       <>
         <Nav numberOfItems={numberOfItems()} />
-        <Route path="/" exact element={<Home />} />
+        <Route path="/" exact element={<Home/>} />
         <Route path="/books" exact render={() => <Books books={books} />} />
         <Route
           path="/books/:id"
