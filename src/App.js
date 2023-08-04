@@ -2,10 +2,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { books } from "./data";
 import { useEffect, useState } from "react";
 import Nav from "./components/Nav";
-import Home from "./Pages/Home";
-import Books from "./Pages/Books";
-import BookInfo from "./Pages/BookInfo";
-import Cart from "./Pages/Cart";
+import Home from "./pages/Home";
+import Books from "./pages/Books";
+import BookInfo from "./pages/BookInfo";
+import Cart from "./pages/Cart";
 import Footer from "./components/Footer";
 
 function App() {
